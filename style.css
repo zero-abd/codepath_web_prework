@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Cabin';
     background-color: #758190;
@@ -11,12 +15,44 @@ body {
 
 .header {
     display: flex;
-    background-color: lightblue;
-    padding: 1%;
+    background-color: #2c3e50;
+    padding: 1.5%;
     align-items: center;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -10px;
+    justify-content: space-between;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+}
+
+#search-input {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    width: 200px;
+}
+
+.nav-bar {
+    background-color: #34495e;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
+.nav-bar a:hover {
+    background-color: #2c3e50;
 }
 
 .stats-container {
@@ -56,16 +92,18 @@ body {
 
 .game-card {
     background-color: #FFFFFF;
-    padding: 1%;
-    margin: 1%;
+    padding: 2%;
+    margin: 1.5%;
     width: 300px;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
 }
 
 .game-card:hover {
-    cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 #button-container {
@@ -78,4 +116,25 @@ button {
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+    transition: transform 0.2s ease;
+}
+
+button:hover,
+button:focus {
+    background-color: #2c3e50;
+    color: white;
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.search-container button {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.search-container button:active {
+    transform: scale(0.95);
 }

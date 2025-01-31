@@ -201,3 +201,22 @@ firstGameContainer.appendChild(firstGameElement);
 let secondGameElement = document.createElement("h4");
 secondGameElement.innerHTML = secondGame.name;
 secondGameContainer.appendChild(secondGameElement);
+
+// create a function to search for games
+function searchGames() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const filteredGames = GAMES_JSON.filter(game => 
+        game.name.toLowerCase().includes(searchTerm)
+    );
+    deleteChildElements(gamesContainer);
+    addGamesToPage(filteredGames);
+
+    // Navigate to games section
+    document.getElementById('games-container').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+    });
+}
+
+// add event listener to search button
+document.getElementById('search-btn').addEventListener('click', searchGames);
